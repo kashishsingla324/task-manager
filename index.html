@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+     
+      <div class="container">
+        <div class="h1"><h1>Plan Your Schedule</h1></div>   <!--heading-->
+        <div class="app">
+          
+          <!-- search option -->
+          <div class="container-search">
+            <div class="searchBox">
+               <input type="text" id="search" placeholder="Search your task" onkeyup="searchTask()">
+               <a class="container-search-a">
+               <i class="fa fa-search fa-2x"></i>
+               </a>
+            </div>
+          </div>
+          <br><br>
+          <!-- main input form -->
+          <form>
+            <div class="main-container">
+            <div class="inputs-class">
+            <div class="inputs1">
+             <input type="text" id="task-input" placeholder="Add a Task">
+             <input type="text" id="task-input2" placeholder="Description">
+            </div>
+            
+              <div class="inputs2">
+              <input type="date" id="task-input3" placeholder="yyyy-mm-dd">
+              <span id="span-1">Select Category</span>
+              <select name="category">
+                <option  name="category" id="category1" value="Personal">Personal</option>
+                <option name="category" id="category2"  value="Work">Work</option>
+                <option  name="category" id="category3" value="Shopping">Shopping</option>
+                <option  name="category" id="category4" value="Others">Any other</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <div class="inputs3"> <button type="submit" class="add-task">Add Task</button></div>
+          </div>
+          </div>
+          </form>
+          
+
+          <!-- filter and sort buttton -->
+          <div class="container-search2">
+           <div class="dropdown">
+          <div class="select sort3">
+          <span class="selected sort ">Filter</span><i class="fa fa-filter fa-2x"></i>
+          <div class="caret"></div>
+          </div>
+          <ul class="menu">
+          <li class="active"><button type="submit" onclick="showall()">Show All</button></li>
+          <li ><button type="submit" onclick="searchComplete()">Completed</button></li>
+          <li ><button type="submit" onclick="searchPending()">Pending</button></li>
+          </ul>
+           </div>
+           <div class="dropdown">
+         <div class="select" id="select2">
+          <span class="selected sort">Sort</span><i class="fa fa-sort fa-2x"></i>
+          <div class="caret"></div>
+         </div>
+         <ul class="menu">
+          <li class="active"> <button id="sort" type="submit" onclick="sortTask()">A-Z</button></li>
+          <li ><button id="sort" type="submit" onclick="sortTask2()">Z-A</button></li>
+          <li ><button id="sort" type="submit" onclick="sortTask3()">Newest</button></li>
+          <li ><button id="sort" type="submit" onclick="sortTask4()">Oldest</button></li>
+          
+          </ul>
+           </div>
+          </div>
+          
+        </div>
+
+        <!-- main content is added in this  -->
+        <ul id="ul-list" class="main-content"></ul>
+      </div> 
+         
+          
+     <!-- external js -->
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+</body>
+</html>
